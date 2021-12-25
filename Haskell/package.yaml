@@ -1,0 +1,54 @@
+name:                employee-specialty-decoder
+version:             0.1.0.0
+license:             BSD3
+author:              "Hank Lin"
+maintainer:          "fullstackgjj@gmail.com"
+copyright:           "2021 Hank Lin"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+  - containers
+
+executables:
+  employee-specialty-decoder-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - employee-specialty-decoder
+    when:
+    - condition: false
+      other-modules: Paths_employee_specialty_decoder
+
+tests:
+  employee-specialty-decoder-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - employee-specialty-decoder
+    - HUnit
+    - hspec
