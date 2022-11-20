@@ -19,6 +19,5 @@ An expert EmployeeSpecialtyDecoder should always be able to perform these calcul
 
 - Determine the correct list of `specialty name` when given a valid `specialty with id` list and valid list of `raw input id` to decode
 
-### Intended User Abstractions
-
+### Intended Library Usage
 The `decode` method is the exported method to be used to get a correct list of `specialty name` from a valid `specialty with id` list and valid list of `raw input id`
